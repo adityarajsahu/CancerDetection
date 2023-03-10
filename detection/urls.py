@@ -6,5 +6,5 @@ urlpatterns = [
     path('uploadImage/', uploadImage, name = 'uploadImage'),
     path('dashboard/', dashboard, name = 'dashboard'),
     path('viewImages/', viewImages, name = 'viewImages'),
-
+    path('singleViewImage/<int:imageId>/', singleViewImage, name = 'singleViewImage'),
 ]

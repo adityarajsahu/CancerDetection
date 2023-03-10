@@ -22,9 +22,9 @@
                                     <div class="container img-responsive">
                                         <img src="#" id="blah" alt="Image not selected" width="100%" style="display: none;">
                                     </div>
-                                    <form action="/uploadPrescription/" method="POST" class="text-center" enctype="multipart/form-data">
+                                    <form action="/uploadImage/" method="POST" class="text-center" enctype="multipart/form-data">
                                         {% csrf_token %}
-                                        <input class="form-control" type="file" name="prescription_image" accept="image/*" capture id="image_input">
+                                        <input class="form-control" type="file" name="cancerImage" accept="image/*" capture id="image_input">
                                         <button type="submit" class="mt-5 btn btn-primary">Submit</button>
                                     </form>
                                 </div>

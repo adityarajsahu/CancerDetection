@@ -1,13 +1,7 @@
 ### Python ###
 
-uploadedPrescriptions
-sample.json
-DigitizedPrescriptionImage
-DigitizedPrescriptionPdf
-DigitizedPrescriptionImagePdf
-imageAnnotations
-RxPrescriptions
-customerUploadedPrescriptions
+models
+xrayImages
 
 
 # Byte-compiled / optimized / DLL files

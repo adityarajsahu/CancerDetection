@@ -35,16 +35,15 @@
             <div class="col-md-6">
                 <div class="card w-75 shadow-lg">
                     <div class="card-img">
-                        <img width="100%" src="{{prescription.image.url}}">
+                        <img width="100%" src="{{xrayImage}}">
                         <h3 class="page-title ml-3 mt-2">
-                        Uploaded by : {{prescription.uploaded_by.username}}<br>
-            Uploaded on : {{prescription.uploaded_on}}
+                        Uploaded by : {{uploadedBy}}<br>
+            Uploaded on :  {{uploadedOn}}
                         </h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-6"  >
-               {% if overall_confidence %}
                <div class="text-center">
                 <h2>Overall Confidence: {{overall_confidence}}</h2>
                 <div class="m-5 p-2">
@@ -67,9 +66,7 @@
                         </button>
                     <!-- </a> -->
                 </div>
-                {% else %}
-                <div> <h3>Upload a Proper Prescription</h3><br><h4>No text Extracted</h4> </div>
-                {% endif %}
+               
             </div>
             </div>
         </div>

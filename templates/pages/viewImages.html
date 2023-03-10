@@ -27,24 +27,24 @@
         <div class="col-md-12">
           <div class="card">
             <div class="card-header text-center">
-              <h4 class="card-title">View Prescription</h4>
+              <h4 class="card-title">View xrayImage</h4>
             </div>
             <div class="card-body row">
-                {% for prescription in prescriptions %}
+                {% for xray in xrayImages %}
                 <div class="card col-md-3 m-5 br-5 text-center zoom" style="border-radius: 2em;">
                   <div class="card-img mt-3">
-                    <img width="100%" alt="prescription_img" src="{{prescription.image.url}}">
+                    <img width="100%" alt="prescription_img" src="{{xray.xrayImage.url}}">
                   </div>
                   <div class="card-header">
                     <div>
-                      Uploaded By: {{prescription.uploaded_by.username}}
+                      Uploaded By: {{xray.uploadedBy.username}}
                     </div>
                     <div>
-                      Uploaded On: {{prescription.uploaded_on}}
+                      Uploaded On: {{xray.uploadedOn}}
                     </div> 
                   </div>
                   <div class="container mt-3">
-                      <a href="/singleViewPrescription/{{prescription.id}}/">
+                      <a href="/singleViewImage/{{xray.id}}/">
                         <button class="btn btn-primary mb-3">View</button>
                       </a>                    
                   </div>
