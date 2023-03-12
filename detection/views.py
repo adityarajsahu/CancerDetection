@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import breastImage
-from yolov7 import detect
+from yolov7.detect import detect
 # Create your views here.
 
 def homepage(request):
@@ -25,8 +25,11 @@ def uploadImage(request):
         elif request.method == 'POST':
             image = request.FILES['cancerImage']
             # print(image)
-            mask_img = detect(image)
-            obj = breastImage(xrayImage = image,uploadedBy = request.user, maskImage = mask_img)
+            obj = breastImage(xrayImage = image,uploadedBy = request.user)
+            obj.save()
+            print(obj.xrayImage.url)
+            maskImage = detect(obj.xrayImage.url)
+            obj = breastImage(maskImage = maskImage)
             obj.save()
             return redirect(singleViewImage,imageId = obj.id)
     else:
@@ -38,7 +41,8 @@ def singleViewImage(request,imageId):
         context = {
             'xrayImage' : res.xrayImage.url,
             'uploadedBy' : res.uploadedBy,
-            'uploadedOn' : res.uploadedOn
+            'uploadedOn' : res.uploadedOn,
+            'maskImage' : res.maskImage
         }
 
         return render(request , 'pages/singleViewImage.html', context=context)
